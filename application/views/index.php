@@ -1,19 +1,16 @@
 <html>
 	<head>
-		<title>Great Number Game</title>
+		<title>Home Page</title>
+		<script src="/assets/bootstrap/js/bootsrap.js"></script>
+		<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css">
 	</head>
 	<body>
-		<div id="contiainer">
-			<?= $this->session->userdata['number'] ?>
-			<?= $this->session->flashdata('result')?>
-			<?= $this->session->flashdata('correct')?>
-			<h1>Welcome to the Game</h1>
-			<p>I am thinking of a number between 1 and 100</p>
-			<p>Take a guess!</p>
-			<form action="check" method="post">
-				<input type="text" name="guess">
-				<input type="submit" value="Submit">
-			</form>
-		</div>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand">Test App</a>
+				</div>
+			</div>
+		</nav>
 	</body>
 </html>
