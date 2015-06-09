@@ -17,7 +17,6 @@ class actions extends CI_Controller {
 		$this->load->view('login');
 	}
 	public function logmein(){
-		$this->load->library('form_validation');
 		$this->load->model('action');
 		//checking validate login
 		if($this->action->validate_login($this->input->post()) == FALSE)
@@ -28,14 +27,16 @@ class actions extends CI_Controller {
 			$this->action->find_user($this->input->post());
 			if($user = $this->action->find_user($this->input->post())){
 				//10:23am 6/9 - if get a chance stop passing password to view file; for security reasons.
-				$this->load->view('wall', array('user'=>$user));
+				$loggedinfo = array('first_name'=>$user['first_name'], 'last_name'=>$user['last_name'], 'email'=>$user['email'], 'id'=>$user['id'],'user_lvl'=>$user['user_lvl']);
+				$this->session->set_userdata('logged_user',$loggedinfo);
+				redirect("/users/show/{$user['id']}");
 			}else{
 				//10:23am 6/9 - add error handling to view files for unmatched username/password
 				$this->session->set_flashdata('errors', "Wrong username or password");
-				$this->load->view('login', array('errors'=>$this->session->flashdata('errors')));
+				$this->load->view('login');
 			}
 		}
-	}	
+	}
 
 	public function create()
 	{
@@ -44,6 +45,11 @@ class actions extends CI_Controller {
 			$this->validate_user();
 		}
 
+	}
+	public function showUser(){
+		$this->load->model('action');
+		$info_array = array('user'=>$this->action->findById($this->uri->segment(3)), 'messages'=>$this->action->getWall($this->uri->segment(3)));
+		$this->load->view('wall', $info_array);
 	}
 
 	public function validate_user(){
@@ -57,11 +63,25 @@ class actions extends CI_Controller {
 		}
 
 	}
-			
-
+	
 	public function logout()
 	{
 		session_destroy();
-		$this->load->view('index');
+		redirect('/');
+	}
+
+	public function post_message(){
+		$this->load->model('action');
+		$logged_user = $this->session->userdata('logged_user');
+		$this->action->post($this->input->post(), $logged_user);
+		$wallid = $this->input->post('wallid');
+		$route = "/users/show/".$wallid;
+		redirect($route);
+	}
+
+	public function loadDashboard(){
+		$this->load->model('action');
+		$query_arr = array('users'=>$this->action->findAll());
+		$this->load->view('dashboard', $query_arr);
 	}
 }

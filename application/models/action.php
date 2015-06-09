@@ -4,11 +4,26 @@ Class action extends CI_model{
 	public function __construct(){
 		parent::__construct();
 	}
+	//find all users
+	public function findAll(){
+		$query = "SELECT * FROM users";
+		return $this->db->query($query)->result_array();
+	}
 	public function find_user($userinfo){
 		$query = "SELECT * FROM users WHERE email = ? AND password=?";
 		$values = array($userinfo['email'], $userinfo['password']);
-		$result = $this->db->query($query, $values)->row_array();
-		return $result;
+		return $this->db->query($query, $values)->row_array();
+	}
+	public function findById($id){
+		$query = "SELECT * FROM users WHERE id=$id";
+		return $this->db->query($query)->row_array();
+	}
+
+	public function getWall($id){
+		$query = "SELECT first_name, last_name, user_id, email, message, messages.updated_at FROM messages JOIN users ON messages.user_id = users.id WHERE wall_id = ? ORDER BY messages.updated_at DESC";
+		$values = array($id);
+		return $this->db->query($query, $values)->result_array();
+
 	}
 	public function validate_reg($post)
 	{
@@ -23,7 +38,6 @@ Class action extends CI_model{
 		{
 			return FALSE;
 		}else{
-			$this->session->set_flashdata('errors', null);
 			return TRUE;
 		}
 	}
@@ -38,12 +52,11 @@ Class action extends CI_model{
 			return FALSE;
 
 		}else{
-			$this->session->flashdata('errors',null);
 			return TRUE;
 		}
 
 	}
-
+	//modify to see if table is empty not if earliest created user
 	public function create($userinfo){
 		//insert user into db with encrypted password
 		$query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (?,?,?,?,NOW(),NOW())";
@@ -64,6 +77,19 @@ Class action extends CI_model{
 		//setting userlevel
 		$this->db->query($update_query);
 	}
-
+	//check to see if admin
+	public function isAdmin($lvl){
+		if($lvl>=9){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+	//posting messages
+	public function post($message, $id){
+		$query = "INSERT INTO user_dashboard.messages (user_id, message, wall_id, created_at, updated_at) VALUES (?,?,?,NOW(),NOW())";
+		$query_arr = array($id['id'], $message['content'], $message['wallid']);
+		$runquery = $this->db->query($query, $query_arr);
+	}
 }
  ?>

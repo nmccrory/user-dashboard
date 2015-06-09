@@ -7,4 +7,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['signin'] = 'actions/login';
 $route['register'] = 'actions/create';
 $route['login'] = 'actions/logmein';
+$route['post_message'] = 'actions/post_message';
+$route['dashboard'] = 'actions/loadDashboard';
+$route['users/show/(:any)'] = 'actions/showUser';
+$route['logout'] = 'actions/logout';
 ?>
