@@ -15,7 +15,7 @@
 						<div class="col s4 offset-s1">
 							<ul id="nav-mobile">
 								<li><a href="/dashboard">Dashboard</a></li>
-								<li><a href="/">Profile</a>
+								<li><a href="/users/edit">Profile</a>
 							</ul>
 						</div>
 						<div class='col s3 offset-s4' style="text-align:right">
@@ -87,7 +87,7 @@
 				<?php foreach($comments as $comment): ?>
 				<?php if($comment['post_id'] == $message['id']): ?>
 					<div class="col s2 offset-s2">
-						<a href=<?php echo "/users/show/{$comment['user_id']}";?>><?=$comment['first_name']?> <?=$comment['last_name']?></a>
+						<h6><a href=<?php echo "/users/show/{$comment['user_id']}";?>><?=$comment['first_name']?> <?=$comment['last_name']?></a></h6>
 					</div>
 					<div class="col s8" style='text-align:right'>
 						<h6><i><?=$comment['updated_at']?></i></h6>
@@ -102,6 +102,7 @@
 							<div class="row">
 								<div class='input-field col s12'>
 									<input type='hidden' name='postid' value=<?=$message['id']?>>
+									<input type='hidden' name='wallid' value=<?=$user['id']?>>
 									<input type="text" name="comment">
 								</div>
 								<div class="col s12" style="text-align:right">

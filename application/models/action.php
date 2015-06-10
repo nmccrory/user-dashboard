@@ -1,4 +1,5 @@
 <?php 
+//8:15pm 6/9 - Need to modulate this model. All of the queries work but they need to be put into separate models. 
 defined('BASEPATH') OR exit('No direct script access allowed');
 Class action extends CI_model{
 	public function __construct(){

@@ -1,4 +1,5 @@
 <?php
+//8:14pm 6/9 - need to break up and modulate the controllers along with the models. Still many features missing such as special privledges for admins and also editing user profiles(WIP). HTML/CSS also needs to be reworked more according to the Materialize structure expectations. Would say site is 60% complete. Error Handling. Refactor. Clean. 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class actions extends CI_Controller {
@@ -82,11 +83,16 @@ class actions extends CI_Controller {
 		$this->load->model('action');
 		$logged_user = $this->session->userdata('logged_user');
 		$this->action->postComment($this->input->post(), $logged_user);
-		redirect('/dashboard');
+		$wallid = $this->input->post('wallid');
+		$route = "/users/show/".$wallid;
+		redirect($route);
 	}
 	public function loadDashboard(){
 		$this->load->model('action');
 		$query_arr = array('users'=>$this->action->findAll());
 		$this->load->view('dashboard', $query_arr);
+	}
+	public function editUser(){
+		$this->load->view('edit');
 	}
 }

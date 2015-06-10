@@ -11,5 +11,6 @@ $route['post_message'] = 'actions/post_message';
 $route['dashboard'] = 'actions/loadDashboard';
 $route['users/show/(:any)'] = 'actions/showUser';
 $route['comment'] = 'actions/post_comment';
+$route['users/edit'] = 'actions/editUser';
 $route['logout'] = 'actions/logout';
 ?>
