@@ -20,10 +20,14 @@ Class action extends CI_model{
 	}
 
 	public function getWall($id){
-		$query = "SELECT first_name, last_name, user_id, email, message, messages.updated_at FROM messages JOIN users ON messages.user_id = users.id WHERE wall_id = ? ORDER BY messages.updated_at DESC";
+		$query = "SELECT first_name, last_name, user_id, email, message, messages.updated_at, messages.id FROM messages JOIN users ON messages.user_id = users.id WHERE wall_id = ? ORDER BY messages.updated_at DESC";
 		$values = array($id);
 		return $this->db->query($query, $values)->result_array();
-
+	}
+	public function getComments($id){
+		$query = "SELECT first_name, last_name, comments.user_id, email, comment, comments.updated_at, comments.post_id FROM comments JOIN users ON comments.user_id = users.id JOIN messages ON comments.post_id = messages.id WHERE messages.wall_id = ?";
+		$values = array($id);
+		return $this->db->query($query,$values)->result_array();
 	}
 	public function validate_reg($post)
 	{
@@ -90,6 +94,11 @@ Class action extends CI_model{
 		$query = "INSERT INTO user_dashboard.messages (user_id, message, wall_id, created_at, updated_at) VALUES (?,?,?,NOW(),NOW())";
 		$query_arr = array($id['id'], $message['content'], $message['wallid']);
 		$runquery = $this->db->query($query, $query_arr);
+	}
+	public function postComment($comment,$id){
+		$query = "INSERT INTO comments (comment, post_id, user_id, created_at, updated_at) VALUES (?,?,?,NOW(),NOW())";
+		$values = array($comment['comment'], $comment['postid'], $id['id']);
+		$this->db->query($query, $values);
 	}
 }
  ?>

@@ -48,7 +48,7 @@ class actions extends CI_Controller {
 	}
 	public function showUser(){
 		$this->load->model('action');
-		$info_array = array('user'=>$this->action->findById($this->uri->segment(3)), 'messages'=>$this->action->getWall($this->uri->segment(3)));
+		$info_array = array('user'=>$this->action->findById($this->uri->segment(3)), 'messages'=>$this->action->getWall($this->uri->segment(3)),'comments'=>$this->action->getComments($this->uri->segment(3)));
 		$this->load->view('wall', $info_array);
 	}
 
@@ -78,7 +78,12 @@ class actions extends CI_Controller {
 		$route = "/users/show/".$wallid;
 		redirect($route);
 	}
-
+	public function post_comment(){
+		$this->load->model('action');
+		$logged_user = $this->session->userdata('logged_user');
+		$this->action->postComment($this->input->post(), $logged_user);
+		redirect('/dashboard');
+	}
 	public function loadDashboard(){
 		$this->load->model('action');
 		$query_arr = array('users'=>$this->action->findAll());
