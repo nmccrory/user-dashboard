@@ -14,7 +14,7 @@
 						<a href="#" class="brand-logo">Walls</a>
 						<ul id="nav-mobile" class="right hide-on-med-and-down">
 							<li><a href="/dashboard">Dashboard</a></li>
-							<li><a href="/">Profile</a>
+							<li><a href="/users/edit">Profile</a>
 						</ul>
 					</div>
 				</div>

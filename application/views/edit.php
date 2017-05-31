@@ -41,6 +41,35 @@
 							<label>Last Name</label>
 							<input type="text" name='last_name'>
 						</div>
+						<button class='btn deep-purple lighten-1' type='submit'>Save</button>
+					</form>
+				</div>
+				<div class="col s6">
+					<h5>Change Password</h5>
+					<form action="" method="post">
+						<div class='input-field'>
+							<label>Password</label>
+							<input type='password' name='password'>
+						</div>
+						<div class='input-field'>
+							<label>Confirm Password</label>
+							<input type='password' name='confirm_password'>
+						</div>
+						<button type='submit' class='btn deep-purple lighten-1'>Update Password</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class='container'>
+			<div class="row">
+				<div class="col s10">
+					<h5>Edit Description</h5>
+					<form action="" method="post">
+						<div class='input-field'>
+							<label>About yourself</label>
+							<textarea class='materialize-textarea' name='description'></textarea>
+						</div>
+						<button type='submit' class='btn deep-purple lighten-1'>Save</button>
 					</form>
 				</div>
 			</div>

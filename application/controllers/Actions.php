@@ -47,9 +47,9 @@ class actions extends CI_Controller {
 		}
 
 	}
-	public function showUser(){
+	public function showUser($id){
 		$this->load->model('action');
-		$info_array = array('user'=>$this->action->findById($this->uri->segment(3)), 'messages'=>$this->action->getWall($this->uri->segment(3)),'comments'=>$this->action->getComments($this->uri->segment(3)));
+		$info_array = array('user'=>$this->action->findById($id), 'messages'=>$this->action->getWall($id),'comments'=>$this->action->getComments($id));
 		$this->load->view('wall', $info_array);
 	}
 
