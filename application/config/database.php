@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'userdashboardsql.database.windows.net',
-	'username' => 'nmccrory@userdashboardsql',
-	'password' => 'cOOkie45',
+	'hostname' => 'us-cdbr-azure-west-b.cleardb.com',
+	'username' => 'bb20b433526fa1',
+	'password' => 'fcb899f6',
 	'database' => 'user_dashboard',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
