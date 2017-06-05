@@ -9,22 +9,24 @@
 		<div class="row">
 			<nav>
 				<div class="nav-wrapper">
-					<div class="col s12 grey darken-3">
-						<a href="#" class="brand-logo">Dashboard</a>
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li><a href="/">Home</a></li>
-							<li><a href="/signin/">Sign in</a></li>
-						</ul>
+					<div class="container">
+						<div class="col s12 grey darken-3">
+							<a href="#" class="brand-logo">Walls</a>
+							<ul id="nav-mobile" class="right hide-on-med-and-down">
+								<li><a href="/">Home</a></li>
+								<li><a href="/signin/">Sign in</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</nav>
 		</div>
 		<div class="row">
-			<div class="col s10 offset-s1 grey lighten-2">
-				<div class="col s10 offset-s1">
+			<div class="col s12 m10 offset-s1 grey lighten-2">
+				<div class="col s12 m10 offset-s1">
 					<section>
 						<h1>Welcome</h1>
-						<p>This is a demo of an application that allows users to sign up, log in, and write to each others walls.</p>
+						<p>Get started by signing up!</p>
 					</section>
 				</div>
 				<div class="col s1 offset-s1">
@@ -36,15 +38,15 @@
 		</div>
 		<div class="row">
 			<div class="col s10 offset-s1">
-				<div class="col s4">
+				<div class="col s12 m4">
 					<h4>Manage Users</h4>
 					<p>Using this app, you'll be able to add, remove, and edit users of the application.</p>
 				</div>
-				<div class="col s4">
+				<div class="col s12 m4">
 					<h4>Leave messages</h4>
 					<p>Users will be able to leave a message to another user using this application</p>
 				</div>
-				<div class="col s4">
+				<div class="col s12 m4">
 					<h4>Edit User Info</h4>
 					<p>Admins will be able to edit another user's information (email address, first name, last name, etc).</p>
 				</div>
