@@ -24,13 +24,13 @@
 		<div class="row">
 			<div class="container">
 				<div class="col s12 grey lighten-2">
-					<div class="col s12 m10 offset-m1">
+					<div class="col s12">
 						<section>
 							<h1>Welcome</h1>
 							<p>Get started by signing up!</p>
 						</section>
 					</div>
-					<div class="col s12 m10 offset-m1">
+					<div class="col s12">
 						<div class='section'>
 							<a class="btn deep-purple lighten-1" href="/signin/">Start</a>
 						</div>
