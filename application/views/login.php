@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="nav-wrapper">
 					<div class="col s10 grey darken-3 offset-s1">
-						<a href="#" class="brand-logo">Fakeblock</a>
+						<a href="#" class="brand-logo">Walls</a>
 						<ul id="nav-mobile" class="right hide-on-med-and-down">
 							<li><a href="/">Home</a></li>
 						</ul>
