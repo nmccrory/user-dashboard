@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="container">
 				<form action="/login" method="post">
-					<div class="col s12 m3 offset-m1">
+					<div class="col s12 m3 l4">
 						<h3>Sign in</h3>
 						<div class='input-field'>
 							Email Address: <input type='text' name="email">
@@ -41,7 +41,7 @@
 		</div>
 		<div class="row">
 			<div class="container">
-				<div class='col s12 m3 offset-m1'>
+				<div class='col s12 m3 l4'>
 					<a href="/register">Don't have an account? Register</a>
 				</div>
 			</div>
