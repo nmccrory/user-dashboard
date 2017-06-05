@@ -92,7 +92,7 @@ Class action extends CI_model{
 	}
 	//posting messages
 	public function post($message, $id){
-		$query = "INSERT INTO user_dashboard.messages (user_id, message, wall_id, created_at, updated_at) VALUES (?,?,?,NOW(),NOW())";
+		$query = "INSERT INTO messages (user_id, message, wall_id, created_at, updated_at) VALUES (?,?,?,NOW(),NOW())";
 		$query_arr = array($id['id'], $message['content'], $message['wallid']);
 		$runquery = $this->db->query($query, $query_arr);
 	}
