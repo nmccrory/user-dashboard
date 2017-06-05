@@ -8,34 +8,42 @@
 	<body>
 		<nav>
 			<div class="row">
-				<div class="nav-wrapper">
-					<div class="col s10 grey darken-3 offset-s1">
-						<a href="#" class="brand-logo">Walls</a>
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li><a href="/">Home</a></li>
-						</ul>
+				<nav>
+					<div class="nav-wrapper">
+						<div class="container">
+							<div class="col s12 grey darken-3">
+								<a href="#" class="brand-logo">Walls</a>
+								<ul id="nav-mobile" class="right hide-on-med-and-down">
+									<li><a href="/">Home</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-				</div>
+				</nav>
 			</div>
 		</nav>
 		<div class="row">
-			<form action="/login" method="post">
-				<div class="col s3 offset-s1">
-					<h3>Sign in</h3>
-					<div class='input-field'>
-						Email Address: <input type='text' name="email">
+			<div class="container">
+				<form action="/login" method="post">
+					<div class="col s12 m3 offset-m1">
+						<h3>Sign in</h3>
+						<div class='input-field'>
+							Email Address: <input type='text' name="email">
+						</div>
+						<div class='input-field'>
+							Password: <input type="password" name='password'>
+						</div>
+						<input type="hidden" name="action" value="login">
+						<button class="btn deep-purple lighten-1" type="submit">Sign in</button>
 					</div>
-					<div class='input-field'>
-						Password: <input type="password" name='password'>
-					</div>
-					<input type="hidden" name="action" value="login">
-					<button class="btn deep-purple lighten-1" type="submit">Sign in</button>
 				</form>
 			</div>
 		</div>
 		<div class="row">
-			<div class='col s3 offset-s1'>
-				<a href="/register">Don't have an account? Register</a>
+			<div class="container">
+				<div class='col s12 m3 offset-m1'>
+					<a href="/register">Don't have an account? Register</a>
+				</div>
 			</div>
 		</div>
 	</body>
