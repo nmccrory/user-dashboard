@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'user-dashboard.database.windows.net',
-	'username' => 'nmccrory@user-dashboard',
-	'password' => '31337cOOkie45',
+	'hostname' => 'userdashboardsql.database.windows.net',
+	'username' => 'nmccrory@userdashboardsql',
+	'password' => 'cOOkie45',
 	'database' => 'user_dashboard',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
