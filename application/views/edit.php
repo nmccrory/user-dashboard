@@ -10,13 +10,16 @@
 		<div class="row">
 			<nav>
 				<div class="nav-wrapper">
-					<div class="col s10 grey darken-3 offset-s1">
-						<a href="#" class="brand-logo">Walls</a>
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li><a href="/dashboard">Dashboard</a></li>
-							<li><a href="/">Profile</a>
-						</ul>
+					<div class="container">
+						<div class="col s12 grey darken-3">
+							<a href="#" class="brand-logo">Walls</a>
+							<ul id="nav-mobile" class="right hide-on-med-and-down">
+								<li><a href="/dashboard">Dashboard</a></li>
+								<li><a href="/">Profile</a>
+							</ul>
+						</div>
 					</div>
+					
 				</div>
 			</nav>
 		</div>

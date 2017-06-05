@@ -7,10 +7,10 @@
 		<script src="/assets/js/materialize.js"></script>
 	</head>
 	<body>
-		<div class="nav-wrapper grey darken-3 offset-s1">
-			<div class="container">
-				<div class="row">
-					<nav>
+		<div class="row">
+			<nav>
+				<div class="nav-wrapper">
+					<div class="container">
 						<a href="#" class="brand-logo">Walls</a>
 						<div class="col s4 offset-s1">
 							<ul id="nav-mobile">
@@ -25,8 +25,8 @@
 							</ul>
 						</div>
 					</div>
-				</nav>
-			</div>
+				</div>
+			</nav>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -38,17 +38,15 @@
 		<div class='container'>
 			<div class='row'>
 				<div class='col s12'>
-					<div class="col s2" style='margin:0'>
+					<div class="col s6 m2" style='margin:0px'>
 						<p>Registered at:</p>
 						<p>User ID:</p>
 						<p>Email address:</p>
-						<p>Description:</p>
 					</div>
-					<div class="col s3" style="text-align:right">
+					<div class="col s6 m3" style="text-align:right">
 						<p><?=$user['created_at']?></p>
 						<p><?=$user['id']?></p>
 						<p><?=$user['email']?></p>
-						<p>Description goes here</p>
 					</div>
 				</div>
 			</div>
