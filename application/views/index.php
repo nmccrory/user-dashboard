@@ -10,7 +10,7 @@
 			<nav>
 				<div class="nav-wrapper">
 					<div class="col s12 grey darken-3">
-						<a href="#" class="brand-logo">Fakeblock</a>
+						<a href="#" class="brand-logo">Dashboard</a>
 						<ul id="nav-mobile" class="right hide-on-med-and-down">
 							<li><a href="/">Home</a></li>
 							<li><a href="/signin/">Sign in</a></li>
@@ -23,8 +23,8 @@
 			<div class="col s10 offset-s1 grey lighten-2">
 				<div class="col s10 offset-s1">
 					<section>
-						<h1>Welcome to Walls</h1>
-						<p>Testing out some real MVC on this site not to be mistaken with the old school p-r-o-cedural programming.</p>
+						<h1>Welcome</h1>
+						<p>This is a demo of an application that allows users to sign up, log in, and write to each others walls.</p>
 					</section>
 				</div>
 				<div class="col s1 offset-s1">
