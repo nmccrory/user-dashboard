@@ -41,7 +41,10 @@
 						<td><?=$user['id']?></td>
 						<td><a href=<?php echo "/users/show/{$user['id']}";?>><?=$user['first_name']?> <?=$user['last_name']?></a></td>
 						<td><?=$user['email']?></td>
-						<td><?=$user['created_at']?></td>
+						<td><?php 
+							$dt = new DateTime($user['created_at']);
+							echo $dt->format('M j, Y'); 
+							?></td>
 						<td><?=$user['user_lvl']?></td>
 					</tr>
 				<?php endforeach; ?>

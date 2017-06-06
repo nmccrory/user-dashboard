@@ -11,7 +11,7 @@
 				<div class="nav-wrapper">
 					<div class="container">
 						<div class="col s12 grey darken-3">
-							<a href="#" class="brand-logo">Walls</a>
+							<a class="brand-logo">Walls</a>
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="/">Home</a></li>
 								<li><a href="/signin/">Sign in</a></li>

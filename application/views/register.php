@@ -12,7 +12,7 @@
 				<div class="nav-wrapper">
 					<div class="container">
 						<div class="col s12 grey darken-3">
-							<a href="#" class="brand-logo">Walls</a>
+							<a class="brand-logo">Walls</a>
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="/">Home</a></li>
 							</ul>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="row">
 			<div class="container">
-				<div class="col s12 m3 l4">
+				<div class="col s12 m4 l4">
 					<form action="register" method="post">
 						<h3>Register</h3>
 						<div class='row'>
@@ -69,7 +69,7 @@
 		</div>
 		<div class="row">
 			<div class="container">
-				<div class='col s12 m3 l4'>
+				<div class='col s12 m4 l4'>
 					<a href="/signin">Already have an account? Log in</a>
 				</div>
 			</div>
